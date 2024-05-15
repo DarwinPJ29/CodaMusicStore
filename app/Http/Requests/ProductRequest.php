@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class ProductRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'category' => 'required',
+            'code' => 'required|unique:products',
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'description' => 'required',
+            'file' => 'required|image|mimes:jpg,png,jpeg|max:2048'
+        ];
+    }
+    public function messages(): array
+    {
+        return  [
+            'file' => 'Please upload image with extension of jpg, png or jpeg',
+        ];
+    }
+}

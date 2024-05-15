@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --main-color:#222831;
+    --secondary-color:#31363F;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+.text-primary-color{
+    color: var(--main-color);
+    font-weight: bold;
+}
+.solid-button{
+    background: var(--secondary-color);
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+.solid-button:hover{
+    background: transparent;
+    color: var(--main-color);
+}
+.outline-button{
+    background: transparent;
+    color: var(--secondary-color);
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.outline-button:hover{
+    background: var(--main-color);
+    border: 1px solid white !important;
+    color: white;
+}
+#navbar{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: var(--main-color) !important;
+    color:#fff;
+}
+
+@media screen and (min-width:995px ) {
+    #navbar, #main-container{
+        margin-left: 12rem;
+    }
+    #sidebar {
+      visibility: visible;
+      transform: none !important;
+      width: 12rem;
+      }
+      #sidebar .btn-close{
+        display: none;
+      }
+}
+#sidebar{
+    background-color: var(--main-color);
+}
+
+.banner-logo{
+    width:10rem ;
+    height: 25px;
+
+}
+#sidebar .btn-close{
+    position:absolute;
+    top: 15px;
+    right: 20px;
+}
+.active-link{
+    background: var(--main-color);
+    border: 1px solid white !important;
+    color: white;
+}
+.inactive-link{
+    background: white;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+.sidebar-hover:hover{
+    background: var(--main-color);
+    border: 1px solid #fff;
+    color: white;
+}
+.drop-item-hover:hover{
+    background: var(--main-color);
+    color: white;
+}
+body{
+    overflow-x: hidden;
+}
+.create-prod-container{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.centers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-image {
+  height: 80px;
+  width: 100px;
+}
+.view-image{
+    height: 400px;
+    width:500px;
+    display: flex;
+
+}
+.view-image img{
+    height: 100%;
+    width: 100%;
+}
+.bold{
+    font-weight: bolder;
+}
+
+.dashboard-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.dashboard-card .card{
+    width: 300px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.icon, .count{
+    font-size: 40px;
+}
+.card-footers{
+    color: var(--main-color);
+}
