@@ -6,7 +6,19 @@ function showPassword() {
     } else {
         x.type = "password";
     }
+    $.ajax({
+        url: "/toggle-password-visibility",
+        type: "POST",
+        data: {},
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        },
+    });
 }
+
 function showPasswordNew() {
     var x = document.getElementById("checkbox_show_password_new");
 

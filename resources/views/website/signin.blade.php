@@ -39,7 +39,8 @@
                     @enderror
                 </div>
                 <div class="form-check mb-3">
-                    <input class="form-check-input " type="checkbox" value="" id="flexCheckChecked">
+                    <input class="form-check-input " type="checkbox" value="" id="flexCheckChecked"
+                        onclick="showPassword()">
                     <label class="form-check-label" for="flexCheckChecked" onclick="showPassword()">
                         Show password
                     </label>

@@ -31,6 +31,12 @@ class AuthenticationController extends Controller
         return view('website.index', compact('products'));
     }
 
+    public function toggleVisibility(Request $request)
+    {
+        return response()->json(['success' => true]);
+    }
+
+
     public function about()
     {
         return view('website.about');
@@ -97,7 +103,7 @@ class AuthenticationController extends Controller
 
         if ($user) {
             return redirect()->route('signin')->with('signin', 'success');
-        }else{
+        } else {
             return back('signin')->with('signup', 'Failure');
         }
     }

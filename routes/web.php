@@ -1,21 +1,38 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\DeliveryController;
-use App\Http\Controllers\admin\ProductController;
-use App\Http\Controllers\Admin\ReportController;
-use App\Http\Controllers\Admin\RequestController;
-use App\Http\Controllers\Admin\StocksController;
-use App\Http\Controllers\Website\AuthenticationController;
-use App\Http\Controllers\Website\PaymentHistoryController;
-use App\Http\Controllers\Website\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\StocksController;
+use App\Http\Controllers\Website\UserController;
+use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\Admin\RequestController;
+use App\Http\Controllers\Admin\DeliveryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Website\AuthenticationController;
+use App\Http\Controllers\Website\PaymentHistoryController;
+
+
+
+
+Route::controller(AccountController::class)->group(function () {
+    Route::get('admin/users', 'index')
+        ->name('users')
+        ->middleware(['auth', 'admin']);
+    Route::get('admin/{user}/edit-account', 'editAccount')
+        ->name('editAccount')->middleware(['auth', 'admin']);
+    Route::patch('admin/{user}/update-account', 'updateAccount')
+        ->name('updateAccount')->middleware(['auth', 'admin']);
+    // Route::delete('/admin/users/{id}', 'destroy')->name('destroy')->middleware(['auth', 'admin']);
+});
+
 
 
 //Guest or User Route
 Route::controller(AuthenticationController::class)->group(function () {
     Route::any('/', 'index')->name('index');
+    Route::post('/toggle-password-visibility', 'PasswordController@toggleVisibility');
     Route::any('/about', 'about')->name('about');
     Route::any('/contact', 'contact')->name('contact');
     Route::any('/sign_in', 'signin')->name('signin')->middleware('guest');

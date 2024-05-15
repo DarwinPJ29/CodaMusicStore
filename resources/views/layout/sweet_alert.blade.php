@@ -49,7 +49,15 @@
         )
     </script>
 @endif
-
+@if (session()->has('update_account'))
+    <script>
+        swalWithBootstrapButtons.fire(
+            'Success ',
+            'Account Successfully Updated!',
+            'success'
+        )
+    </script>
+@endif
 {{-- Archive Product Successfully --}}
 @if (session()->has('archive_product'))
     <script>
