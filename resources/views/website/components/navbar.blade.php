@@ -13,16 +13,24 @@
                     <a class="nav-link  text-white  active {{ Request::segment(1) === 'about' ? ' nav-actives' : '' }}"
                         href="{{ route('about') }}">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-white  active {{ Request::segment(1) === 'contact' ? ' nav-actives' : '' }}"
+                        href="{{ route('contact') }}">Contact Us</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle   text-white {{ Request::segment(1) === 'category' ? ' nav-actives' : '' }} "
                         href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Category
                     </a>
                     <ul class="dropdown-menu ">
-                        <li><a class="dropdown-item {{ Request::segment(2) === 'Drums' ? 'selected' : '' }}"
-                                href="{{ route('category', 'Drums') }}">Drums</a></li>
-                        <li><a class="dropdown-item {{ Request::segment(2) === 'Guitar' ? 'selected' : '' }}"
-                                href="{{ route('category', 'Guitar') }}">Guitar</a></li>
+                        <li><a class="dropdown-item {{ Request::segment(2) === 'Drumset' ? 'selected' : '' }}"
+                                href="{{ route('category', 'Drumset') }}">Drumset</a></li>
+                        <li><a class="dropdown-item {{ Request::segment(2) === 'Acoustic Guitar' ? 'selected' : '' }}"
+                                href="{{ route('category', 'Acoustic Guitar') }}">Acoustic Guitar</a></li>
+                        <li><a class="dropdown-item {{ Request::segment(2) === 'Bass Guitar' ? 'selected' : '' }}"
+                                href="{{ route('category', 'Bass Guitar') }}">Bass Guitar</a></li>
+                        <li><a class="dropdown-item {{ Request::segment(2) === 'Electric Guitar' ? 'selected' : '' }}"
+                                href="{{ route('category', 'Electric Guitar') }}">Electric Guitar</a></li>
                         <li><a class="dropdown-item
                                 {{ Request::segment(2) === 'Accessories' ? 'selected' : '' }}"
                                 href="{{ route('category', 'Accessories') }}">Accessories</a>

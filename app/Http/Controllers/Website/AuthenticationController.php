@@ -35,6 +35,10 @@ class AuthenticationController extends Controller
     {
         return view('website.about');
     }
+    public function contact()
+    {
+        return view('website.contactUs');
+    }
     public function signin(Request $request)
     {
         if ($request->isMethod('get')) {

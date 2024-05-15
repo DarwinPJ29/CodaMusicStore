@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(AuthenticationController::class)->group(function () {
     Route::any('/', 'index')->name('index');
     Route::any('/about', 'about')->name('about');
+    Route::any('/contact', 'contact')->name('contact');
     Route::any('/sign_in', 'signin')->name('signin')->middleware('guest');
     Route::get('/sign_up', 'signup')->name('signup')->middleware('guest');
     Route::post('/sign_up', 'signup')->name('signups')->middleware('guest');

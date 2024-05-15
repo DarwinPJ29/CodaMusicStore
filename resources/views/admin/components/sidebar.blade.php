@@ -26,7 +26,7 @@
             <li class="nav-item mb-1">
                 <a href="{{ route('product.index') }}"
                     class="nav-link sidebar-hover rounded {{ Request::segment(1) === 'product' ? 'active-link' : 'inactive-link' }}"><i
-                        class="fa-solid fa-cart fs-4"></i>
+                        class="fa-solid fa-hands-holding-circle fs-4"></i>
                     <b>Product</b></a>
             </li>
             <li class="nav-item mb-1">

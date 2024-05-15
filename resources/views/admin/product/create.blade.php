@@ -16,11 +16,17 @@
                         <label for="formGroupExampleInput" class="form-label">Product Category</label>
                         <select class="form-select" aria-label="Default select example" name="category">
                             <option value=""selected hidden>Select Category</option>
-                            <option value="Drums"
-                                {{ old('category') === 'Drums' ? 'Selected' : '' }}>Drums
+                            <option value="Drumset"
+                                {{ old('category') === 'Drumset' ? 'Selected' : '' }}>Drumset
                             </option>
-                            <option value="Guitar"
-                                {{ old('category') === 'Guitar' ? 'Selected' : '' }}>Guitar
+                            <option value="Acoustic Guitar"
+                                {{ old('category') === 'Acoustic Guitar' ? 'Selected' : '' }}>Acoustic Guitar
+                            </option>
+                            <option value="Bass Guitar"
+                                {{ old('category') === 'Bass Guitar' ? 'Selected' : '' }}>Bass Guitar
+                            </option>
+                            <option value="Electric Guitar"
+                                {{ old('category') === 'Electric Guitar' ? 'Selected' : '' }}>Electric Guitar
                             </option>
                             <option value="Accessories"
                                 {{ old('category') === 'Accessories' ? 'Selected' : '' }}>Accessories

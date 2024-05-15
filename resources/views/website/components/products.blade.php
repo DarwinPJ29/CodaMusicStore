@@ -3,13 +3,15 @@
     <hr>
     <div class="product-card">
         @foreach ($products as $product)
-            <div class="card">
+            <products class="card">
                 <a href="{{ route('view.product', $product->id) }}">
                     <img src="{{ url('storage/products/' . $product->file) }}" class="card-img-top" style="height: 150px">
                 </a>
-                <div class="body px-3 mb-3">
-                    <p><b>{{ $product->name }}</b></p>
-                    <div class="span">
+                <product class="body px-3 mb-3">
+                    <productname>
+                        <p><b>{{ $product->name }}</b></p>
+                    </productname>
+                    <price class="span">
                         <span>
                             @php
                                 $convert = (string) $product->price; // convert into a string
@@ -19,9 +21,9 @@
                                 $converted = strrev($converted); // reverse string back
                             @endphp
                             <i class="fa-solid fa-peso-sign"></i> {{ $converted }}.00</span>
-                    </div>
-                </div>
-            </div>
+                    </price>
+                </product>
+            </products>
         @endforeach
     </div>
 </div>
