@@ -73,9 +73,12 @@
                         @can('only-admin')
                             <li><a class="dropdown-item drop-item-hover" href="{{ route('dashboard') }}">Dashboard</a></li>
                         @endcan
+                        <li><a class="dropdown-item drop-item-hover" href="{{ route('editUser') }}">Edit Info
+                            </a></li>
                         <li><a class="dropdown-item drop-item-hover" href="{{ route('changePassword') }}">Change
                                 Password</a></li>
                         <hr>
+
                         <li><a class="dropdown-item drop-item-hover" href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </div>

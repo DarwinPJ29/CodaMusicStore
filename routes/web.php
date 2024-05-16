@@ -12,22 +12,7 @@ use App\Http\Controllers\Admin\DeliveryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Website\AuthenticationController;
 use App\Http\Controllers\Website\PaymentHistoryController;
-
-
-
-
-Route::controller(AccountController::class)->group(function () {
-    Route::get('admin/users', 'index')
-        ->name('users')
-        ->middleware(['auth', 'admin']);
-    Route::get('admin/{user}/edit-account', 'editAccount')
-        ->name('editAccount')->middleware(['auth', 'admin']);
-    Route::patch('admin/{user}/update-account', 'updateAccount')
-        ->name('updateAccount')->middleware(['auth', 'admin']);
-    // Route::delete('/admin/users/{id}', 'destroy')->name('destroy')->middleware(['auth', 'admin']);
-});
-
-
+use App\Http\Controllers\Website\UserEditController;
 
 //Guest or User Route
 Route::controller(AuthenticationController::class)->group(function () {
@@ -41,6 +26,8 @@ Route::controller(AuthenticationController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout')->middleware('auth');
     Route::any('/change_password', 'changePassword')->name('changePassword')->middleware('auth');
 });
+
+Route::any('/edit_user', [UserEditController::class, 'editUser'])->name('editUser')->middleware('auth');
 
 //Admin Routes
 //Dashboard Routes

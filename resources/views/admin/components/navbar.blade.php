@@ -15,8 +15,11 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item drop-item-hover" href="{{ route('index') }}">Website</a></li>
+                        <li><a class="dropdown-item drop-item-hover" href="{{ route('editUser') }}">Edit Info
+                            </a></li>
                         <li><a class="dropdown-item drop-item-hover" href="{{ route('changePassword') }}">Change
                                 Password</a></li>
+
                         <hr>
                         <li><a class="dropdown-item drop-item-hover" href="{{ route('logout') }}">Logout</a></li>
                     </ul>
