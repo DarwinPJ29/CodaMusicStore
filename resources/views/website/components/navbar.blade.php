@@ -3,6 +3,7 @@
         <a class="navbar-brand mx-3" href="{{ route('index') }}">
             <img src="{{ asset('assets/images/logo.png') }}" width="200" height="50">
         </a>
+        {{--  --}}
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -48,7 +49,7 @@
         </div>
         <div class="div d-flex">
             {{-- Burger Button --}}
-            <a class="navbar-toggler nav-link fs-2 text-dark" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <a class="navbar-toggler nav-link fs-2 text-white" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-list" viewBox="0 0 16 16">

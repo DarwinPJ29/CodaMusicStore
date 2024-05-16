@@ -2,6 +2,14 @@
 @section('website-main')
     @include('website.components.navbar_logo')
     <div class="form-container row px-5 d-flex justify-content-center">
+        <div class="d-flex justify-content-end ">
+            @if (auth()->user()->role === 0)
+            <a href="{{ route('index') }}" class="btn btn-outline-secondary btn-sm">Back</a>
+            @else
+            <a href="{{ route('dashboard') }}" class="btn btn-outline-secondary btn-sm">Back</a>
+            @endif
+
+        </div>
         <div class="col-lg-4 col-md-6 col-sm-10  p-3 border form-holder">
             <form action="{{ route('changePassword') }}" method="post">
                 @csrf
