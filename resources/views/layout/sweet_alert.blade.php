@@ -49,7 +49,7 @@
         )
     </script>
 @endif
-@if (session()->has('update_account'))
+@if (session()->has('edit_user'))
     <script>
         swalWithBootstrapButtons.fire(
             'Success ',

@@ -58,12 +58,6 @@
                     <i class="fa-solid fa-chart-simple"></i>
                     <b>Reports</b></a>
             </li>
-            <li class="nav-item mb-1">
-                <a href="{{ route('users') }}"
-                    class="nav-link sidebar-hover rounded {{ Request::segment(2) === 'users' ? 'active-link' : 'inactive-link' }}">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <b>Users</b></a>
-            </li>
         </ul>
     </div>
 </div>
