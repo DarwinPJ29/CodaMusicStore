@@ -5,14 +5,14 @@
         {{-- Hero Section --}}
         <div class="image-container-hero">
             {{-- <img src="{{ asset('assets/images/guitarbg.png') }}" class="img-hero" alt="..." > --}}
-                <div class="d-flex justify-content-end me-5 pt-5">
-                    <div class="ms-5">
-                        <p class="text-uppercase fw-bold title-text text-white">
-                            the <br> persuit of music <br>PERFECTION
-                        </p>
-                        <p class="text-uppercase text-white coda "> coda music store</p>
-                    </div>
+            <div class="d-flex justify-content-end me-5 pt-5">
+                <div class="ms-5">
+                    <p class="text-uppercase fw-bold title-text text-white">
+                        the <br> persuit of music <br>PERFECTION
+                    </p>
+                    <p class="text-uppercase text-white coda "> coda music store</p>
                 </div>
+            </div>
         </div>
     </div>
 

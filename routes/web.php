@@ -17,6 +17,7 @@ use App\Http\Controllers\Website\UserEditController;
 //Guest or User Route
 Route::controller(AuthenticationController::class)->group(function () {
     Route::any('/', 'index')->name('index');
+    Route::get('/index/highest', 'highestPrice')->name('highestPrice');
     Route::post('/toggle-password-visibility', 'PasswordController@toggleVisibility');
     Route::any('/about', 'about')->name('about');
     Route::any('/contact', 'contact')->name('contact');
@@ -46,6 +47,8 @@ Route::resource('/delivery', DeliveryController::class)->middleware(['auth', 'ad
 Route::controller(StocksController::class)->group(function () {
     Route::get('/stocks', 'index')->name('stocks')->middleware(['auth', 'admin']);
     Route::get('/customers', 'customers')->name('customers')->middleware(['auth', 'admin']);
+    Route::patch('/customer/activate/{id}', 'activate')->name('activate')->middleware(['auth', 'admin']);
+    Route::patch('/customer/deactivate/{id}', 'deactivate')->name('deactivate')->middleware(['auth', 'admin']);
 });
 
 //Receipts Routes

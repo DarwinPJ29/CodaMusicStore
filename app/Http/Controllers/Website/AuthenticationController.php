@@ -17,7 +17,10 @@ class AuthenticationController extends Controller
 {
     public function index()
     {
-        $products = Product::where('archive', '0')->get();
+        $products = Product::where('archive', '0')
+            ->orderBy('price', 'ASC')
+            ->get();
+
         foreach ($products as  $value) {
             $exist = Stock::where('product_id', $value->id)->exists();
             if ($exist) {
@@ -30,6 +33,26 @@ class AuthenticationController extends Controller
 
         return view('website.index', compact('products'));
     }
+
+    public function highestPrice()
+    {
+        $highest = Product::where('archive', '0')
+            ->orderBy('price', 'DESC')
+            ->get();
+
+        foreach ($highest as  $value) {
+            $exist = Stock::where('product_id', $value->id)->exists();
+            if ($exist) {
+                $stocks = Stock::where('product_id', $value->id)->first();
+                $value->stocks = $stocks->quantity;
+            } else {
+                $value->stocks = 0;
+            }
+        }
+
+        return view('website.highestProducts', compact('highest'));
+    }
+
 
     public function toggleVisibility(Request $request)
     {
@@ -61,7 +84,7 @@ class AuthenticationController extends Controller
         // User account is not activated
         if ($user) {
             if ($user->activated !== 1) {
-                return back()->with('inactivated', 'Sorry your account is not activated yet!');
+                return back()->with('inactivated', 'Sorry your account is deactivated!');
             }
         }
 

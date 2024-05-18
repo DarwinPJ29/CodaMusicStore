@@ -16,10 +16,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('price', 'ASC')->get();
 
         return view('admin.product.index', compact('products'));
     }
+
 
     /**
      * Show the form for creating a new resource.

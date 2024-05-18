@@ -29,6 +29,26 @@
     </script>
 @endif
 
+
+@if (session()->has('activate_user'))
+    <script>
+        swalWithBootstrapButtons.fire(
+            'Success ',
+            'Activated Successfully!',
+            'success'
+        )
+    </script>
+@endif
+@if (session()->has('deactivate_user'))
+    <script>
+        swalWithBootstrapButtons.fire(
+            'Success ',
+            'Deactivated Successfully!',
+            'success'
+        )
+    </script>
+@endif
+
 {{-- Created Product Successfully --}}
 @if (session()->has('create_product'))
     <script>
