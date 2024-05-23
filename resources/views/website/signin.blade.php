@@ -2,10 +2,10 @@
 @section('website-main')
     @include('website.components.navbar_logo')
     <div class="form-container row px-5 d-flex justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-10  p-3 border form-holder">
+        <div class="col-lg-4 col-md-6 col-sm-10  p-5 border form-holder">
             <form action="{{ route('signin') }}" method="post">
                 @csrf
-                <h1 class="text-label"> <b>Login</b> </h1>
+                <h2 class="text-labeltop"> <b>Login</b> </h2>
                 @if (Session::has('activated'))
                     <div class="alert alert-success" role="alert">
                         <b>{{ Session::get('activated') }}</b>
@@ -45,12 +45,12 @@
                         Show password
                     </label>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <button type="submit" class="btn solid-button w-100">Login</button>
                 </div>
                 <hr>
-                <div class="mb-3">
-                    <a href="{{ route('signup') }}" class="btn outline-button w-100">Create Account</a>
+                <div class="mb-5">
+                    <a href="{{ route('signup') }}" class="btn outline-button  w-100">Create Account</a>
                 </div>
             </form>
         </div>

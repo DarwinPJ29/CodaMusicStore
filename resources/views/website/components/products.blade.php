@@ -24,7 +24,7 @@
                         <img src="{{ url('storage/products/' . $product->file) }}" class="card-img-top"
                             style="height: 150px">
                     </a>
-                    <product class="body px-3 mb-3">
+                    <product class="body px-3 mb-4">
                         <productname>
                             <p><b>{{ $product->name }}</b></p>
                         </productname>

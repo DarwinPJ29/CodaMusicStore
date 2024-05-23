@@ -2,10 +2,10 @@
 @section('website-main')
     @include('website.components.navbar_logo')
     <div class="form-container row px-5 d-flex justify-content-center">
-        <div class="col-lg-6 col-md-10 col-sm-12  p-3 border form-holder">
+        <div class="col-lg-6 col-md-10 col-sm-12  p-5 border form-holder">
             <form action="{{ route('signup') }}" method="post">
                 @csrf
-                <h1 class="text-label"> <b>Create Account</b> </h1>
+                <h2 class="text-label"> <b>Create Account</b> </h2>
                 <div class="row">
                     <div class=" col mb-1">
                         <label for="name" class="form-label text-label"><b>Name</b></label>
@@ -61,7 +61,7 @@
                     </div>
 
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <button type="submit" class="btn solid-button w-100">Submit</button>
                 </div>
                 <hr>

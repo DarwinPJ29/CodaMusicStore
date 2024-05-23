@@ -1,51 +1,51 @@
 @extends('layout.website')
 @section('website-main')
     @include('website.components.navbar')
-    <?php
 
-$data = [
-    'container' => [
-        '@attributes' => [
-            'class' => 'container pt-5'
-        ],
-        'row' => [
+    <?php
+    $data = [
+        'container1' => [
             '@attributes' => [
-                'class' => 'row pt-5 d-flex justify-content-center'
+                'class' => 'container pt-5'
             ],
-            'container-sm' => [
+            'row' => [
                 '@attributes' => [
-                    'class' => 'container-sm border p-5 about'
+                    'class' => 'row pt-5 d-flex justify-content-center'
                 ],
-                'hr' => null,
-                'sections' => [
-                    [
-                        'h1' => [
-                            '@attributes' => [
-                                'class' => 'text-label'
-                            ],
-                            '@value' => 'Contact Us'
-                        ],
-                        'p' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus odio esse, illum cupiditate possimus architecto doloribus omnis est ullam unde. Sequi impedit velit numquam est quam consectetur provident itaque expedita fugiat nulla temporibus consequuntur reprehenderit tenetur, dolorem suscipit quod quisquam dolorum odit asperiores. Nisi debitis, nam iure eaque ad repellat.'
+                'container-sm2' => [
+                    '@attributes' => [
+                        'class' => 'container-sm2 border p-5 about'
                     ],
-                    [
-                        'h1' => [
-                            '@attributes' => [
-                                'class' => 'text-label'
+                    'hr' => null,
+                    'sections' => [
+                        [
+                            'h4' => [
+                                '@attributes' => [
+                                    'class' => 'text-label'
+                                ],
+                                '@value' => 'Get in Touch'
                             ],
-                            '@value' => 'Mission'
+                            'p4' => 'Renz Russel Batongbakal & Daniel Gideon Santos'
                         ],
-                        'p' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam voluptate ad harum possimus quas labore consequatur dolor, dolore non sed voluptas totam quod, molestias expedita necessitatibus! Saepe nihil eveniet amet vitae dolorum voluptatum expedita sunt tenetur perferendis! Omnis, quo unde optio quod quos suscipit aut doloribus numquam ipsum aliquam dolorum.'
+                        [
+                            'h6' => [
+                                '@attributes' => [
+                                    'class' => 'text-label'
+                                ],
+                                '@value' => 'Email us at:'
+                            ],
+                            'p4' => 'Codamusicstore@gmail.com'
+                        ]
                     ]
                 ]
             ]
         ]
-    ]
-];
-
-function arrayToXml($data, &$xmlData) {
+    ];
+ // Function to convert PHP array to XML
+ function arrayToXml($data, &$xmlData) {
     foreach ($data as $key => $value) {
         if (is_array($value)) {
-            if ($key !== '@attributes') { // Skip processing @attributes key
+            if ($key !== '@attributes') {
                 if (isset($value['@value'])) {
                     $subnode = $xmlData->addChild($key, htmlspecialchars($value['@value']));
                     if (isset($value['@attributes'])) {
@@ -68,17 +68,26 @@ function arrayToXml($data, &$xmlData) {
         }
     }
 }
-
-$xmlData = new SimpleXMLElement('<?xml version="1.0"?><data></data>');
+    
+    $xmlData = new SimpleXMLElement('<?xml version="1.0"?><data></data>');
     arrayToXml($data, $xmlData);
+
+    // XQuery to select specific elements
+    $xpathQuery = '/data/container/row/container-sm/sections/h1';
+
+    // Perform XQuery
+    $results = $xmlData->xpath($xpathQuery);
 
     // Output the XML without numeric keys
     $xmlOutput = $xmlData->asXML();
     $xmlOutput = preg_replace('/<\d+>/', '', $xmlOutput);
+    echo $xmlOutput;
 
-        header('Content-Type: application/xml');
-        echo $xmlOutput;
-        ?>
+    // Process and output the results
+    foreach ($results as $result) {
+        echo $result;
+    }
+    ?>
 
-        @include('website.components.footer')
-    @endsection
+    @include('website.components.footer')
+@endsection

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
     <div class="container-fluid">
         <a class="navbar-brand mx-3" href="{{ route('index') }}">
-            <img src="{{ asset('assets/images/logo.png') }}" width="200" height="50">
+            <img src="{{ asset('assets/images/logo.png') }}" width="500" height="58">
         </a>
         {{--  --}}
         <div class="collapse navbar-collapse " id="navbarNav">
