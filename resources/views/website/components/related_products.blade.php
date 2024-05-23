@@ -7,7 +7,7 @@
                 <div class="card">
                     <a href="{{ route('view.product', $product->id) }}">
                         <img src="{{ url('storage/products/' . $product->file) }}" class="card-img-top"
-                            style="height: 150px">
+                            style="height: 230px">
                     </a>
                     <div class="body px-3 mb-3">
                         <p><b>{{ $product->name }}</b></p>

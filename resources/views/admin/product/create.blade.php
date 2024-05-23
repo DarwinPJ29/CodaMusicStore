@@ -30,7 +30,7 @@
                             </option>
                             <option value="Accessories"
                                 {{ old('category') === 'Accessories' ? 'Selected' : '' }}>Accessories
-                                Pants</option>
+                                Parts</option>
                         </select>
                     </div>
                     <div class="col mb-1">

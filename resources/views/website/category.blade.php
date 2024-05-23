@@ -3,7 +3,7 @@
     @include('website.components.navbar')
     <div class="container pt-5 ">
     @section('titles')
-        <h1 class="text-center "><b>{{ $category }}</b></h1>
+        <h8 class="text-center "><b>{{ $category }}</b></h8>
     @endsection
     @include('website.components.products')
 </div>

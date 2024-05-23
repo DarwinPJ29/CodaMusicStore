@@ -166,14 +166,16 @@ input[type="checkbox"]:checked {
 .product-card {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
+    margin-bottom: 780px;
 
 }
 .card a {
     margin-bottom: 5px;
     cursor: pointer;
 }
+
 
 .product-card > .card {
     width: 200px;
@@ -225,7 +227,7 @@ input[type="checkbox"]:checked {
     padding-top: 140px;
 }
 
-.row p {
+.row p6 {
     font-size: 18px;
     font-weight: 300;
     color: #ffffff;
@@ -234,6 +236,16 @@ input[type="checkbox"]:checked {
     font-style: italic;
     max-width: 750px;
     padding-left: 80px; /* Adjust padding as needed */
+
+}
+
+.row p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #000000;
+    text-align: left; /* Align text to the left */
+
+        
 
 }
 
@@ -472,12 +484,32 @@ input[type="checkbox"]:checked {
 /* Removed fixed height for .products */
 .products {
     background-color: white;
-    padding: 100px;
-    margin-top: 100px;
-    margin: 100px; 
-   
-
+    margin-top: 2vw; /* Adjust margin top based on viewport width */
+    margin-right: 5%; /* Adjust margin right based on viewport width */
+    margin-bottom: 5vw; /* Adjust margin bottom based on viewport width */
+    margin-left: 5%;
+    height: 1500px; /* Adjust margin left based on viewport width */
 }
+
+
+@media (max-width: 1355px) {
+    .products {
+        height: 2000px; /* Further adjusted height for even smaller screens */
+    }
+}
+
+@media (max-width: 1080px) {
+    .products {
+        height: 3100px; /* Further adjusted height for even smaller screens */
+    }
+}
+
+@media (max-width: 163px) {
+    .products {
+        height: 2200px; /* Adjusted height for smaller screens */
+    }
+}
+
 
 
 .second-section {
@@ -749,4 +781,69 @@ h7{
     padding-top: 40px;
 }
 
+
+
+.container{
+    background-color: #fff;
+    height: 900px;
+    margin-bottom: 80px;
+    
+}
+
+h8 {
+    color: #000;
+    font-weight: 550;
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+.product-row {
+
+    height: 1500px; /* Default height */
+    padding: 5vw;
+    margin-top: 5vw;
+    margin-right: 2%;
+    margin-bottom: 5vw;
+    margin-left: 2%;
+    
+}
+.productRow{
+background-color: #fff;
+    height: 1500px; /* Default height */
+    padding: 5vw;
+    margin-top: 5vw;
+    margin-right: 5%;
+    margin-bottom: 5vw;
+    margin-left: 5%;
+    
+}
+
+@media (max-width: 1355px) {
+    .productRow {
+        height: 1700px; /* Further adjusted height for even smaller screens */
+    }
+}
+
+@media (max-width: 1080px) {
+    .productRow {
+        height: 3100px; /* Further adjusted height for even smaller screens */
+    }
+}
+
+@media (max-width: 163px) {
+    .productRow {
+        height: 2200px; /* Adjusted height for smaller screens */
+    }
+}
+
+h9{
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: 70px;
+    
+}
 

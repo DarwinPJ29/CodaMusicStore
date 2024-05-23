@@ -7,7 +7,7 @@
                 <img src="{{ url('/storage/products/' . $product->file) }}">
             </div>
             <div class="col-lg col-md-4  mt-5 pt-5 ">
-                <h1 class="text-center text-label"><b>{{ $product->name }}</b></h1>
+                <h3 class="text-center text-label"><b>{{ $product->name }}</b></h3>
                 <div class="row">
                     <div class="col-3">
                         <h5 class="bold">Description</h5>

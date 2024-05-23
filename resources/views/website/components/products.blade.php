@@ -22,7 +22,7 @@
                 <products class="card">
                     <a href="{{ route('view.product', $product->id) }}">
                         <img src="{{ url('storage/products/' . $product->file) }}" class="card-img-top"
-                            style="height: 150px">
+                            style="height: 220px">
                     </a>
                     <product class="body px-3 mb-4">
                         <productname>

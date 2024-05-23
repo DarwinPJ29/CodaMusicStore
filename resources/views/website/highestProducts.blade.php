@@ -2,25 +2,30 @@
 @section('website-main')
     @include('website.components.navbar')
     <div class=" pt-5 overflow-x-hidden">
-        {{-- Hero Section --}}
-        <div class="image-container-hero">
-            {{-- <img src="{{ asset('assets/images/guitarbg.png') }}" class="img-hero" alt="..." > --}}
-            <div class="d-flex justify-content-end me-5 pt-5">
-                <div class="ms-5">
-                    <p class="text-uppercase fw-bold title-text text-white">
-                        the <br> persuit of music <br>PERFECTION
-                    </p>
-                    <p class="text-uppercase text-white coda "> coda music store</p>
+            {{-- Hero Section --}}
+            <div class="image-container-hero">
+                {{-- <img src="{{ asset('assets/images/guitarbg.png') }}" class="img-hero" alt="..." > --}}
+                <div class="d-flex justify-content-end me-5 pt-5">
+                    <div class="ms-5">
+
+                        <p class="text-uppercase title-text text-white">
+                            The <br>persuit <br>of music PERFECTION
+                        </p>
+                        <p class="text-uppercase text-white coda "> coda music store</p>
+                            
+                        <!-- <p class="caption-top">The Pursuit <br>of Musical Perfection</p>
+                        <p class="caption-bottom">CODA MUSICAL STORE</p> -->
+                    </div>
+
                 </div>
-            </div>
-        </div>
+                </div>
     </div>
 
 @section('titles')
-    <h1 class="text-center"><b>Our Products</b></h1>
+    <h9 class="text-center"><b>Our Products</b></h9>
 @endsection
 
-<div class="row product-row  mt-5 mb-5  ">
+<div class="row productRow  mt-5 mb-5  ">
 
     @yield('titles')
     <div class="col-md-12 ">
@@ -44,7 +49,7 @@
                 <products class="card">
                     <a href="{{ route('view.product', $product->id) }}">
                         <img src="{{ url('storage/products/' . $product->file) }}" class="card-img-top"
-                            style="height: 150px">
+                            style="height: 220px">
                     </a>
                     <product class="body px-3 mb-3">
                         <productname>
